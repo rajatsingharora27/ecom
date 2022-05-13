@@ -1,0 +1,15 @@
+.container{
+    height: 5vh;
+    color: white;
+    background-color: var(--banner);
+    width: 100%;
+    font-size: 14px;
+    font-weight: 500;
+    display: flex;
+    justify-content: center;
+
+    .announcement{
+     
+        padding-top:0.5rem;
+    }
+}
