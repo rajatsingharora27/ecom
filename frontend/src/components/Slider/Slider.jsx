@@ -124,9 +124,14 @@ const Slider = () => {
           </Slide>
         ))}
       </Wrapper>
+
+
+
       <Arrow direction="right" onClick={() => handleClick("right")}>
         <ArrowForwardIosOutlinedIcon />
       </Arrow>
+
+      
     </Container>
   );
 };

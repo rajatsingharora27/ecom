@@ -1,17 +1,21 @@
-import React from "react";
 import styled from "styled-components";
+
 
 const Container = styled.div`
   flex: 1;
-  margin: 2px;
+  margin: 3px;
   height: 70vh;
   position: relative;
 `;
+
 const Image = styled.img`
   width: 100%;
   height: 100%;
-  object-fit: cover; ;
+  object-fit: cover;
+ 
+
 `;
+
 const Info = styled.div`
   position: absolute;
   top: 0;
@@ -19,35 +23,30 @@ const Info = styled.div`
   width: 100%;
   height: 100%;
   display: flex;
+  flex-direction: column;
   align-items: center;
   justify-content: center;
-  flex-direction: column;
-
 `;
 
-
-const Title = styled.h2`
+const Title = styled.h1`
     color:white;
     margin-bottom: 20px;
-
 `;
+
 const Button = styled.button`
-    border: none;
+    border:none;
     padding: 10px;
-    background-color: transparent;
-    color: white;
-    font-size: 16px;
-    font-weight: 600;
-    border: 2px solid #af8e8e ;
+    background-color: white;
+    color:gray;
     cursor: pointer;
+    font-weight: 600;
 
     &:hover{
-        border: 2px solid #af8e8e;
-        background-color: white;
-        color: black;
-        opacity: 0.5;
-        transition: all 0.5s ease-out;
-
+      background-color: var(--bg);
+      opacity: 0.7;
+      color: black;
+     
+      transition: all 0.3s ease-out;
     }
 
 `;
@@ -55,12 +54,11 @@ const Button = styled.button`
 const CategoryItem = ({ item }) => {
   return (
     <Container>
-      <Image src={item.img}></Image>
+      <Image src={item.img} />
       <Info>
         <Title>{item.title}</Title>
-        <Button>Shop Now</Button>
+        <Button>SHOP NOW</Button>
       </Info>
-      
     </Container>
   );
 };

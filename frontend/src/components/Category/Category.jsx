@@ -1,25 +1,24 @@
-import React from 'react';
 import styled from "styled-components";
-import { categories } from '../../data';
-import CategoryItem from '../CategoryItem/CategoryItem';
+import { categories } from "../../data";
 
+import CategoryItem from "../CategoryItem/CategoryItem";
 
-
-const Categoty =styled.div`
-    display: flex;
-    padding: 20px;
-    justify-content: space-between;
+const Container = styled.div`
+  display: flex;
+  padding: 20px;
+  justify-content: space-between;
+  
 
 `;
 
-
-
-const Category = () => {
+const Categories = () => {
   return (
-    <Categoty>
-        {categories.map((item)=>(<CategoryItem item={item} key={item.id}/>))}
-    </Categoty>
-  )
-}
+    <Container>
+      {categories.map((item) => (
+        <CategoryItem item={item} key={item.id} />
+      ))}
+    </Container>
+  );
+};
 
-export default Category
+export default Categories;
