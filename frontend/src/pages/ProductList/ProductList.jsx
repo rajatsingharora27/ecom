@@ -1,18 +1,79 @@
-import React from 'react'
-import styled from 'styled-components';
-import NavBar from '../../components/NavBar/NavBar';
-import Announcement from "../../components/Announcement/Announcement"
+import React from "react";
+import styled from "styled-components";
+import NewsLetter from "../../components/NewsLetter/NewsLetter";
+import Footer from "../../components/Footer/Footer";
+import NavBar from "../../components/NavBar/NavBar";
+import Announcement from "../../components/Announcement/Announcement";
+import Products from "../../components/Products/Products";
 
-const Container=styled.div``;
+const Container = styled.div``;
+const Title = styled.h1`
+  margin: 2rem;
+`;
+const FilterComponent = styled.div`
+  display: flex;
+  justify-content: space-between;
+`;
+const Filter = styled.div`
+  margin: 2rem;
+`;
+
+const FilterText = styled.span`
+  font-size: 2rem;
+  font-weight: 600;
+  margin-right: 20px;
+`;
+
+const Select = styled.select`
+  margin-left: 4px;
+`;
+
+const Option = styled.option``;
 
 const ProductList = () => {
   return (
     <Container>
-        <Announcement/>
-        <NavBar/>
-        
+      <Announcement />
+      <NavBar />
+      <Title>Dresses</Title>
+      <FilterComponent>
+        <Filter>
+          <FilterText>Filter Product:</FilterText>
+          <Select>
+            <Option disabled selected>
+              Color
+            </Option>
+            <Option>Red</Option>
+            <Option>Green</Option>
+            <Option>Yellow</Option>
+            <Option>White</Option>
+            <Option>Pink</Option>
+            <Option>Black</Option>
+          </Select>
+          <Select>
+            <Option disabled selected>
+              Size
+            </Option>
+            <Option>S</Option>
+            <Option>L</Option>
+            <Option>XL</Option>
+            <Option>2XL</Option>
+          </Select>
+        </Filter>
+        <Filter>
+          <FilterText>Sort Products:</FilterText>
+          <Select>
+            <Option selected>Newest</Option>
+            <Option>price(asce)</Option>
+            <Option>price(desc)</Option>
+          </Select>
+        </Filter>
+      </FilterComponent>
+      <Products />
+      <NewsLetter />
+      <Footer />
     </Container>
-  )
-}
+  );
+};
 
-export default ProductList
+export default ProductList;
