@@ -8,10 +8,14 @@ import PinterestIcon from "@mui/icons-material/Pinterest";
 import LocationOnIcon from "@mui/icons-material/LocationOn";
 import LocalPhoneIcon from "@mui/icons-material/LocalPhone";
 import EmailIcon from "@mui/icons-material/Email";
+import { mobile,tablet } from "../../Responsive";
 
 const Container = styled.div`
   display: flex;
   height: 25vh;
+  ${mobile({flexDirection:'column'})}
+  ${tablet({flexDirection:'column'})}
+
 `;
 
 const Left = styled.div`
@@ -24,6 +28,7 @@ const Left = styled.div`
 `;
 const Center = styled.div`
   flex: 1;
+  ${mobile({display:'none'})}
 `;
 
 const Title = styled.h3`
@@ -78,6 +83,8 @@ const SocialContainer = styled.div`
   display: flex;
   justify-content: center;
   align-items: center;
+  flex-direction: row;
+  flex-wrap: wrap;
 `;
 const SocialIcon = styled.div`
   margin: 2rem;
@@ -89,6 +96,7 @@ const SocialIcon = styled.div`
   justify-content: center;
   align-items: center;
   cursor: pointer;
+  
 `;
 
 const Footer = () => {

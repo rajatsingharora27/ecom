@@ -2,6 +2,11 @@
   // background: var(--bg);
   width: 100%;
 
+  // $smallScreen:380px;
+  // @media (min-width:$smallScreen) {
+  //   display: none;
+  // }
+
   .wrapper {
     padding: 10px 20px;
     display: flex;

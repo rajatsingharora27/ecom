@@ -6,11 +6,17 @@ import NewsLetter from "../../components/NewsLetter/NewsLetter";
 import Footer from "../../components/Footer/Footer";
 import RemoveCircleOutlineIcon from "@mui/icons-material/RemoveCircleOutline";
 import AddCircleOutlineIcon from "@mui/icons-material/AddCircleOutline";
+import{mobile,tablet,large} from '../../Responsive';
+
+
+
 
 const Container = styled.div``;
 const Wrapper = styled.div`
   padding: 5rem;
   display: flex;
+${mobile({flexDirection:'column',padding:'10px'})}
+${tablet({flexDirection:'column',padding:'10px'})}
 `;
 const ImageContainer = styled.div`
   flex: 1;
@@ -19,14 +25,20 @@ const Image = styled.img`
   width: 100%;
   height: 90vh;
   object-fit: cover;
+  ${mobile({height:'40vh'})}
+  ${tablet({height:'50vh'})}
+  ${large({height:'50vh'})}
 `;
 const InfoContainer = styled.div`
   flex: 1;
   padding: 0rem 4rem;
+  ${mobile({padding:'10px'})}
 `;
 const Title = styled.h2`
   font-weight: 800;
   font-size: medium;
+  ${mobile({fontSize:'20px',fontWeight:'600'})}
+  ${tablet({fontSize:'30px',fontWeight:'800'})}
 `;
 const Desc = styled.p`
   font-size: 2rem;
@@ -42,6 +54,9 @@ const FilterContainer = styled.div`
   width: 50%;
   display: flex;
   justify-content: space-between;
+  ${mobile({width:'100%'})}
+  ${tablet({width:'100%'})}
+  ${large({width:'100%'})}
 `;
 const Filter = styled.div`
   display: flex;
@@ -71,6 +86,9 @@ const AddContainer=styled.div`
   display:flex;
   align-items: center;
   justify-content: space-between;
+  ${mobile({width:'100%'})}
+  ${tablet({width:'100%'})}
+  ${large({width:'100%'})}
 
 `;
 

@@ -4,6 +4,7 @@ import ArrowForwardIosOutlinedIcon from "@mui/icons-material/ArrowForwardIosOutl
 import styled from "styled-components";
 import { useState } from "react";
 import { sliderItems } from "../../data";
+import { mobile, tablet,large } from "../../Responsive";
 
 const Container = styled.div`
   width: 100%;
@@ -11,6 +12,9 @@ const Container = styled.div`
   display: flex;
   position: relative;
   overflow: hidden;
+  ${mobile({ maxWidth: "100vw" })}
+
+  ${tablet({ width: "100%", objectFit: "cover" })}
 `;
 
 const Arrow = styled.div`
@@ -51,11 +55,22 @@ const ImgContainer = styled.div`
   height: 100%;
   width: 50%;
   flex: 1;
+  ${mobile({ maxWidth: "50vw", maxHeight: "30vh" })};
+  ${tablet({ maxWidth: "60vw", maxHeight: "40vh" })};
+  ${large({ maxWidth: "70vw", maxHeight: "60vh" })};
 `;
 
 const Image = styled.img`
   height: 80%;
   width: 100%;
+  ${mobile({
+    maxWidth: "200px",
+  
+    fontSize: "0.5rem",
+    fontWeight: "400",
+  })}
+
+ 
 `;
 
 const InfoContainer = styled.div`
@@ -65,6 +80,17 @@ const InfoContainer = styled.div`
 
 const Title = styled.h1`
   font-size: 70px;
+  ${mobile({
+    maxWidth: "200px",
+    dispaly: "none",
+    fontSize: "2rem",
+    fontWeight: "600",
+  })}
+
+  ${tablet({
+    fontSize: "2rem",
+    fontWeight: "600",
+  })}
 `;
 
 const Desc = styled.p`
@@ -72,6 +98,16 @@ const Desc = styled.p`
   font-size: 20px;
   font-weight: 500;
   letter-spacing: 3px;
+
+  ${mobile({
+    fontSize: "1rem",
+    fontWeight: "400",
+  })}
+
+  ${tablet({
+    fontSize: "2rem",
+    fontWeight: "500",
+  })}
 `;
 
 const Button = styled.button`
@@ -91,17 +127,12 @@ const Button = styled.button`
 const Slider = () => {
   const [slideIndex, setSlideIndex] = useState(0);
 
-
-
   const handleClick = (direction) => {
-
     if (direction === "left") {
-        setSlideIndex(slideIndex > 0 ? slideIndex - 1 : 2);
-      } else {
-        setSlideIndex(slideIndex < 2 ? slideIndex + 1 : 0);
-      }
-
-
+      setSlideIndex(slideIndex > 0 ? slideIndex - 1 : 2);
+    } else {
+      setSlideIndex(slideIndex < 2 ? slideIndex + 1 : 0);
+    }
   };
 
   return (
@@ -114,7 +145,7 @@ const Slider = () => {
         {sliderItems.map((item) => (
           <Slide bg={item.bg} key={item.id}>
             <ImgContainer>
-              <Image src={item.img}  />
+              <Image src={item.img} />
             </ImgContainer>
             <InfoContainer>
               <Title>{item.title}</Title>
@@ -125,13 +156,9 @@ const Slider = () => {
         ))}
       </Wrapper>
 
-
-
       <Arrow direction="right" onClick={() => handleClick("right")}>
         <ArrowForwardIosOutlinedIcon />
       </Arrow>
-
-      
     </Container>
   );
 };
