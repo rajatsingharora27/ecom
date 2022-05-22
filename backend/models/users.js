@@ -1,5 +1,6 @@
-const { timeStamp } = require('console');
+
 const mongoose=require('mongoose');
+import validator from 'validator';
 
 const userSchema=new mongoose.Schema(
     {
@@ -12,7 +13,12 @@ const userSchema=new mongoose.Schema(
         email:{
             type:String,
             required:true,
-            unique:true
+            unique:true,
+            validate(value){
+                if(!validator.isEmail(value)){
+                    throw new Error("Please Enter the email correctly");
+                }
+            },
         },
         password:{
             type:String,
@@ -29,4 +35,4 @@ const userSchema=new mongoose.Schema(
     {timestamps:true}
 );
 
-module.exports=mongoose.Model("User",userSchema);
+module.exports=mongoose.model("User",userSchema);
