@@ -1,6 +1,6 @@
 
 const mongoose=require('mongoose');
-import validator from 'validator';
+const validator = require('validator');
 
 const userSchema=new mongoose.Schema(
     {
@@ -8,7 +8,7 @@ const userSchema=new mongoose.Schema(
         username:{
             type:String,
             required:true,
-            unique:true
+            trim:true
         },
         email:{
             type:String,
@@ -29,8 +29,6 @@ const userSchema=new mongoose.Schema(
             default:false
         },
         // createdAt:Date.now()
-
-
     },
     {timestamps:true}
 );
