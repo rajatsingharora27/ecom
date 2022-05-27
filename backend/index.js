@@ -20,15 +20,15 @@ app.use(bodyParser.json())
 
 
 //Routes
-// const UserRouter=require('./routes/user');
 const authRouter=require('./routes/auth');
+const userRouter=require('./routes/user');
 
 
 
 
 //API
-// app.use('/api/user',UserRouter);
-app.use('/api',authRouter);
+app.use('/api/auth',authRouter);
+app.use('/api/user',userRouter);
 
 
 
