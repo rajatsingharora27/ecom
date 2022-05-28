@@ -23,6 +23,9 @@ app.use(bodyParser.json())
 const authRouter=require('./routes/auth');
 const userRouter=require('./routes/user');
 const productRouter=require('./routes/product');
+const cartRouter=require('./routes/cart');
+const orderRouter=require('./routes/order');
+
 
 
 
@@ -31,6 +34,8 @@ const productRouter=require('./routes/product');
 app.use('/api/auth',authRouter);
 app.use('/api/user',userRouter);
 app.use('/api/product',productRouter);
+app.use('/api/cart',cartRouter);
+app.use('/api/order',orderRouter);
 
 
 
