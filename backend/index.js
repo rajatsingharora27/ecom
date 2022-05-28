@@ -3,6 +3,7 @@ const mongoose = require('mongoose');
 const bodyParser = require('body-parser')
 const dotenv=require('dotenv');
 const app=express();
+const cors=require('cors');
 
 dotenv.config();
 
@@ -15,6 +16,7 @@ mongoose.connect('mongodb://localhost:27017/ecomm-shop')
 .catch((err)=>console.log('Not connected to database'));
 
 //MiddleWares
+app.use(cors());
 app.use(bodyParser.json())
 
 
@@ -25,6 +27,7 @@ const userRouter=require('./routes/user');
 const productRouter=require('./routes/product');
 const cartRouter=require('./routes/cart');
 const orderRouter=require('./routes/order');
+const stripeRouter=require('./routes/stripe');
 
 
 
@@ -36,6 +39,7 @@ app.use('/api/user',userRouter);
 app.use('/api/product',productRouter);
 app.use('/api/cart',cartRouter);
 app.use('/api/order',orderRouter);
+app.use('/api/checkout',stripeRouter);
 
 
 
